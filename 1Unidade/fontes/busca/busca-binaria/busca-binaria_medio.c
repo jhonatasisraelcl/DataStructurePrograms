@@ -1,3 +1,6 @@
+//TITULO DO PROJETO:busca-binaria_medio.c
+//VERSÃO ou DATA:1.3 26/02/2019
+//AUTORES:LAURENTINO, J.I.C.
 
 #include <stdlib.h>
 #include <stdio.h>

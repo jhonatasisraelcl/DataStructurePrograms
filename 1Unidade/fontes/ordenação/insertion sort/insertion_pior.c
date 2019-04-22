@@ -1,3 +1,6 @@
+//TITULO DO PROJETO:insertion_pior.c
+//VERSÃO ou DATA:1.0 12/03/2019
+//AUTORES:LAURENTINO, J.I.C.
 
 #include <stdlib.h>
 #include <stdio.h>

@@ -1,3 +1,6 @@
+//TITULO DO PROJETO:Merge.c
+//VERSÃO ou DATA:1.3 15/03/2019
+//AUTORES:LAURENTINO, J.I.C.
 
 #include <stdlib.h>
 #include <stdio.h>
@@ -6,44 +9,32 @@
 #include <time.h>
 #include <unistd.h>
 
-
 void *merge(int *vetor, int comeco, int meio, int fim);
 void *mergeSort(int* vetor, int comeco, int fim);
 int *newv (unsigned int n);
 double tvtosec(struct timeval t);
 
-
-int main(void) 
- {
-
+int main(void){
 	srand(time(NULL)); 
 	struct timeval a;
 	struct timeval b;
 	double tempo;
 
  	for(int n = 1000; n <= 10000; n += 100){
-
  		tempo = 0;
-
  		for(int i = 0; i < 3000 ; i++){
- 
 		 	int *v = newv(n);
-
 		 	gettimeofday(&b, NULL);
 		 	mergeSort(v, 0, n-1);
 		 	gettimeofday(&a, NULL);
-
 		 	tempo  += tvtosec(a) - tvtosec(b);
 		 	free(v);
 	 	}
         fprintf(stderr, "%d %10lf\n", n, tempo/3000 );
 	 	printf("%d %10lf\n", n, tempo/3000);
 	 }
-
  	return 0;
-
  }
-
 
 void *merge(int *vetor, int comeco, int meio, int fim) {
     int i = comeco;
@@ -72,25 +63,18 @@ void *merge(int *vetor, int comeco, int meio, int fim) {
 void *mergeSort(int *vetor, int comeco, int fim){
     if (comeco < fim) {
         int meio = (fim+comeco)/2;
-
         mergeSort(vetor, comeco, meio);
         mergeSort(vetor, meio+1, fim);
         merge(vetor, comeco, meio, fim);
     }
 }
 
-
 int *newv (unsigned int n){
-
   int *v =  (int*)malloc(n*sizeof(int));
   for(int i = 0; i < n; i++) v[i] = rand() % 11;
-
-
   return v;
-
 }
 
 double tvtosec(struct timeval t){
   return (double) t.tv_sec + t.tv_usec/(double)1e6;
-
 }

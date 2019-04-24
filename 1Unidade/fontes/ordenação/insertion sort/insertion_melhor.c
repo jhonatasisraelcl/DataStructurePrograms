@@ -47,10 +47,9 @@ int *newv (unsigned int n){
 
 void ordena (int *vetor, unsigned int n){
 	int i, j, atual;
-
 	for (i = 1; i < n; i++) {
 		atual = vetor[i]; 
-		for (j = i - 1; (j >= 0) && (atual < vetor[j]); j--) { 
+		for (j = i - 1; (j >= 0) && (atual < vetor[j]); j--){ 
 			vetor[j+1] = vetor[j];
 	    }
 		vetor[j+1] = atual;

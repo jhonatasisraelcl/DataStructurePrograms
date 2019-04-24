@@ -1,3 +1,6 @@
+//TITULO DO PROJETO:Quick_medio.c
+//VERSÃO ou DATA:1.0 28/03/2019
+//AUTORES:LAURENTINO, J.I.C.
 
 #include <stdlib.h>
 #include <stdio.h>
@@ -6,29 +9,21 @@
 #include <time.h>
 #include <unistd.h>
 
-
-
 int *newv (int n);
 double tvtosec(struct timeval t);
 void quickSort(int *v, int s, int e);
 int partition(int *v, int s, int e);
 
-int main(void) 
- {
-
+int main(void) {
   srand(time(NULL)); 
   struct timeval a;
   struct timeval b;
   double tempo;
   int n,i;
-
-
+ 
   for(n = 1000; n <= 10000; n+= 100){
       tempo = 0;
-
       for(i = 0; i < 500; i++){
-
-   
         int *v = newv(n);
         gettimeofday(&b, NULL);
         quickSort(v, 0, n-1);
@@ -36,13 +31,10 @@ int main(void)
         tempo  += tvtosec(a) - tvtosec(b);
         free(v);
       }
-      
     fprintf(stderr, "%d %10lf\n", n, tempo/500 );
     printf("%d %10lf\n", n, tempo/500);
   }
-
   return 0;
-
  }
 
 
@@ -73,19 +65,11 @@ int partition(int *v, int s, int e){
 
 
 int *newv (int n){
-  /* no caso médio o vetor é preenchido de forma aleatória */
-
   int *v =  (int*)malloc(n*sizeof(int));
-  for(int i = 0; i < n; i++)
-  { v[i] = rand() % n;}
-
-
+  for(int i = 0; i < n; i++){ v[i] = rand() % n;}
   return v;
-
 }
 
 double tvtosec(struct timeval t){
   return (double) t.tv_sec + t.tv_usec/(double)1e6;
-
 }
-

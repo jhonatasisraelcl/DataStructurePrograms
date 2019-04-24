@@ -35,6 +35,7 @@ int main( void ) {
 	}
 	return 0;
 }
+
 double tvtosec(struct timeval t){
   return (double) t.tv_sec + t.tv_usec/(double)1e6;
 }
@@ -49,7 +50,7 @@ void ordena (int *vetor, unsigned int n){
 	int i, j, atual;
 	for (i = 1; i < n; i++) {
 		atual = vetor[i]; 
-		for (j = i - 1; (j >= 0) && (atual < vetor[j]); j--) { 
+		for (j = i - 1; (j >= 0) && (atual < vetor[j]); j--){ 
 			vetor[j+1] = vetor[j];
 	    }
 		vetor[j+1] = atual;

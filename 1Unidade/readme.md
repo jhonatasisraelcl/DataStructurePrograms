@@ -57,4 +57,17 @@ Agora foram foram utilizadas as colunas 1 e 3 (x,y). Podemos ainda interpolar li
 <code>> plot 'dados.dat' using 1:3 title 'Coluna 3' with lines </code><br/>
 <br/>
 Usar interpolação é muito útil quando pretende-se analizar valores intermediários dentre os pontos que se possui nos dados.
+<br/>
+Utilizando os botões do mouse pode-se dar zoom e marcar pontos para obter a coordenada no local. Uma outra boa opção é usar grades no gráfico, para isso bastar usar a opção set grid. Pode-se ainda salvar a seqüência de comandos em um arquivo:
+
+<code>gnuplot> save 'exemplo'</code><br/>
+E carregar arquivos.
+
+<code>gnuplot> load 'exemplo'</code><br/>
+E é claro, podemos salvar o gráfico em uma imagem. O gnuplot oferece uma vasta gama de formatos de saída para imagens. No caso, vamos salvar o gráfico no formato png:
+
+gnuplot> set terminal png
+gnuplot> set output 'imagem.png'
+gnuplot> replot
+A imagem só será gerada após o comando replot.
   

@@ -18,9 +18,11 @@ Usa-se o comando <strong>plot</strong> para plotar funções 2D. No gnuplot exis
 Também é possível imprimir mais de uma função separando-as por vírgula.
 
 <code>gnuplot> plot sin(x), log(x), cos(x), x**2</code>
+<br/><br/>
 Podemos também setar o título da função dentre outros parametros:
-
-gnuplot> plot sin(x) title 'Senóide'
+<br/><br/>
+<code>gnuplot> plot sin(x) title 'Senóide'</code>
+<br/><br/>
 Alterar os limites do gráfico:
 
 gnuplot> set xrange [0:10]

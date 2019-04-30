@@ -53,7 +53,7 @@ Note que foram plotados os pontos (x,y), onde x é a primeira coluna do arquivo,
 <code>gnuplot> plot 'dados.dat' using 1:3 title 'Pontos'</code><br/>
 Agora foram foram utilizadas as colunas 1 e 3 (x,y). Podemos ainda interpolar linearmente esses pontos utilizando a opção  <strong>with lines</strong>.
 
-<code>  gnuplot> plot 'dados.dat' using 1:2 title 'Coluna 2' with lines, \</code><br/>
+<code>  gnuplot> plot 'dados.dat' using 1:2 title 'Coluna 2' with lines, </code><br/>
 <code>> plot 'dados.dat' using 1:3 title 'Coluna 3' with lines </code><br/>
 <br/>
 Usar interpolação é muito útil quando pretende-se analizar valores intermediários dentre os pontos que se possui nos dados.

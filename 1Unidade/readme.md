@@ -31,4 +31,28 @@ Alterar os limites do gráfico:
 <code>gnuplot> replot </code><br/>
 
 Para utilizar coordenadas polares usa-se o comando <strong>set polar</strong>. Para espaços 3D utiliza-se a função <strong>splot</strong> no lugar de <strong>plot</strong>.
+
+## Plotando dados de um arquivo
+Antes de mostrar como carregar os dados de um arquivo, vamos criar esse arquivo.
+
+<code>$ cat > dados.dat << EOF</code><br/>
+<code>> 0.0   0.0   0.0</code><br/>
+<code>> 0.1   1.5   2.0</code><br/>
+<code>> 0.2   1.2   2.2</code><br/>
+<code>> 0.3   1.9   2.1</code><br/>
+<code>> 0.5   0.5   0.9</code><br/>
+<code>> EOF</code><br/>
+<code>$ gnuplot</code><br/>
+
+Carreando os dados do arquivo e imprimindo:
+
+<code>gnuplot> plot 'dados.dat'</code><br/>
+Note que foram plotados os pontos (x,y), onde x é a primeira coluna do arquivo, e y a segunda. Podemos selecionar as colunas que desejamos usar:
+
+<code>gnuplot> plot 'dados.dat' using 1:3 title 'Pontos'</code><br/>
+Agora foram foram utilizadas as colunas 1 e 3 (x,y). Podemos ainda interpolar linearmente esses pontos utilizando a opção with lines.
+
+<code>gnuplot> plot 'dados.dat' using 1:2 title 'Coluna 2' with lines, \</code><br/>
+<code>> plot 'dados.dat' using 1:3 title 'Coluna 3' with lines </code><br/>
+Usar interpolação é muito útil quando pretende-se analizar valores intermediários dentre os pontos que se possui nos dados.
   

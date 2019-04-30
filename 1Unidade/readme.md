@@ -70,6 +70,9 @@ E é claro, podemos salvar o gráfico em uma imagem. O gnuplot oferece uma vasta
 <code>gnuplot> set output 'imagem.png'</code><br/>
 <code>gnuplot> replot</code><br/><br/>
 A imagem só será gerada após o comando <strong>replot</strong>.
+
+# O GNUPLOT aplicado ao problema 
+
   
 ## Referencias
 [dicas-l](http://www.dicas-l.com.br/arquivo/usando_gnuplot_para_gerar_bons_graficos.php#.XMe92uhKgdV)

@@ -79,3 +79,4 @@ Como dito no documento acima, é necessário realizar a inicialização do GNUPL
   
 ## Referencias
 [dicas-l](http://www.dicas-l.com.br/arquivo/usando_gnuplot_para_gerar_bons_graficos.php#.XMe92uhKgdV)
+[Documentação](http://www.gnuplot.info/docs_5.0/gnuplot.pdf)

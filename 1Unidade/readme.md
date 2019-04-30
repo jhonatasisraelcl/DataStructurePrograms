@@ -14,9 +14,10 @@ Para encerrar a execução do gnuplot é só precionar <strong>ctrl+D</strong> (
 Usa-se o comando <strong>plot</strong> para plotar funções 2D. No gnuplot existem as variáveis próprias de cada espaço, no caso 2D é utilizada  a variável <strong>x</strong> para coordenadas retangulares e <strong>t</strong> para coordenadas polares.
 
 <code>gnuplot> plot sin(x)</code>
+<br/><br/>
 Também é possível imprimir mais de uma função separando-as por vírgula.
 
-gnuplot> plot sin(x), log(x), cos(x), x**2
+<code>gnuplot> plot sin(x), log(x), cos(x), x**2</code>
 Podemos também setar o título da função dentre outros parametros:
 
 gnuplot> plot sin(x) title 'Senóide'

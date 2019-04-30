@@ -66,8 +66,8 @@ E carregar arquivos.
 <code>gnuplot> load 'exemplo'</code><br/>
 E é claro, podemos salvar o gráfico em uma imagem. O gnuplot oferece uma vasta gama de formatos de saída para imagens. No caso, vamos salvar o gráfico no formato png:
 
-gnuplot> set terminal png
-gnuplot> set output 'imagem.png'
-gnuplot> replot
+<code>gnuplot> set terminal png</code><br/>
+<code>gnuplot> set output 'imagem.png'</code><br/>
+<code>gnuplot> replot</code><br/>
 A imagem só será gerada após o comando replot.
   

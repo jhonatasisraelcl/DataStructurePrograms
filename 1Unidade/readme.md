@@ -24,10 +24,12 @@ Podemos também setar o título da função dentre outros parametros:
 <code>gnuplot> plot sin(x) title 'Senóide'</code>
 <br/><br/>
 Alterar os limites do gráfico:
-
+<code>
 gnuplot> set xrange [0:10]
 gnuplot> set yrange [-2:2]
 gnuplot> plot sin(x) title 'Senóide', cos(x) title 'Cossenóide'
 gnuplot> replot
+</code>
+<br/><br/>
 Para utilizar coordenadas polares usa-se o comando set polar. Para espaços 3D utiliza-se a função splot no lugar de plot.
   

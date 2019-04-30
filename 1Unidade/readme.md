@@ -1,4 +1,4 @@
-# Usando gnuplot para gerar gráficos
+# Usando GNUPLOT  para gerar gráficos
 
 O gnuplot é um software que facilita a criação de graficos 2D e 3D. Neste documento será mostrado alguns comandos básicos de utilização, e algumas opções que podem incrementar mais resultado final do gráfico.
 
@@ -72,7 +72,10 @@ E é claro, podemos salvar o gráfico em uma imagem. O gnuplot oferece uma vasta
 A imagem só será gerada após o comando <strong>replot</strong>.
 
 # O GNUPLOT aplicado ao problema 
+Como dito no documento acima, é necessário realizar a inicialização do GNUPLOT e logo após plotando as funções que serão utilizadas para gerar o grafico. Neste documento será exemplificado como foram produzidos os graficos do **Merge Sort**.
 
+<code> gcc merge.c -o merge -lm
+./merge > merge.txt</code>
   
 ## Referencias
 [dicas-l](http://www.dicas-l.com.br/arquivo/usando_gnuplot_para_gerar_bons_graficos.php#.XMe92uhKgdV)

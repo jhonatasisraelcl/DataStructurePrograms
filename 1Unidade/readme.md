@@ -69,5 +69,5 @@ E é claro, podemos salvar o gráfico em uma imagem. O gnuplot oferece uma vasta
 <code>gnuplot> set terminal png</code><br/>
 <code>gnuplot> set output 'imagem.png'</code><br/>
 <code>gnuplot> replot</code><br/><br/>
-A imagem só será gerada após o comando replot.
+A imagem só será gerada após o comando <strong>replot</strong>.
   

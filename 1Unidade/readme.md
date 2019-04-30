@@ -25,9 +25,9 @@ Podemos também setar o título da função dentre outros parametros:
 <br/><br/>
 Alterar os limites do gráfico:
 
-<code>gnuplot> set xrange [0:10]<br/><br/></code>
-<code>gnuplot> set yrange [-2:2]<br/><br/></code>
-<code>gnuplot> plot sin(x) title 'Senóide', cos(x) title 'Cossenóide'<br/><br/></code>
+<code>gnuplot> set xrange [0:10]</code><br/>
+<code>gnuplot> set yrange [-2:2]</code><br/>
+<code>gnuplot> plot sin(x) title 'Senóide', cos(x) title 'Cossenóide'</code><br/>
 <code>gnuplot> replot <br/><br/></code>
 
 <br/><br/>

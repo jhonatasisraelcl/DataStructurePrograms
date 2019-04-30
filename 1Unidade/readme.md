@@ -28,8 +28,7 @@ Alterar os limites do gráfico:
 <code>gnuplot> set xrange [0:10]</code><br/>
 <code>gnuplot> set yrange [-2:2]</code><br/>
 <code>gnuplot> plot sin(x) title 'Senóide', cos(x) title 'Cossenóide'</code><br/>
-<code>gnuplot> replot <br/><br/></code>
+<code>gnuplot> replot </code><br/>
 
-<br/><br/>
 Para utilizar coordenadas polares usa-se o comando set polar. Para espaços 3D utiliza-se a função splot no lugar de plot.
   

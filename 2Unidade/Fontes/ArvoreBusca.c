@@ -1,10 +1,10 @@
 
-include <stdlib.h>
-include <stdio.h>
-include <math.h>
-include <sys/time.h>
-include <time.h>
-include <unistd.h>
+#include <stdlib.h>
+#include <stdio.h>
+#include <math.h>
+#include <sys/time.h>
+#include <time.h>
+#include <unistd.h>
 
 typedef struct node {
     int v;
@@ -31,25 +31,12 @@ int main (void){
     int achou;
     int n, k, i, primeiro, aleatorio;
 
-
-    /* CONTROLA O TAMANHO */
-
  	for(n = 1000; n <= 10000; n += 500){
- 		tempo = 0;
-
-        /* CALCULA A MEDIA */
-        
+ 		tempo = 0;        
  		for(i = 0; i < 10000 ; i++){
-            
-            /* PREENCHE A ÁRVORE */
-
             for(k = 0; k < n; k++){
-
                 aleatorio = rand() % (n+1);
                 adicionar(&node, aleatorio);
-
-                /* pegando o primeiro elemento adicionado para o melhor caso */
-
                 if(k == 0){
                     primeiro = aleatorio;
                 }
@@ -57,34 +44,24 @@ int main (void){
 
 		 	gettimeofday(&b, NULL);
 
-            achou = tsearch(node, primeiro); /* melhor caso */
-            /* achou = tsearch(node, (n*2)); /* pior caso */
-            /* achou = tsearch(node, (rand() % (n+1))); /* caso  médio*/
+            achou = tsearch(node, primeiro); 
+            achou = tsearch(node, (n*2)); 
+            achou = tsearch(node, (rand() % (n+1))); 
 		 	gettimeofday(&a, NULL);
 
 		 	tempo  += tvtosec(a) - tvtosec(b);
-
-            /* LIBERA A ARVORE */
-            
+		 	            
             tremove(node);
             node = NULL;
 	 	}
-
-        /* PRINTA O RESULTADO */
-
 	 	fprintf(stderr, "%d %.20lf\n", n, tempo/10000 );
 	 	printf("%d %.20lf\n", n, tempo/10000 );
-
 	}
-
     return 0;
 }
 
-
 void adicionar(Node **n, int v) {
-
     Node *aux, *f;
-
     if(*n == NULL){
         (*n) = newnode(v);
     }else{

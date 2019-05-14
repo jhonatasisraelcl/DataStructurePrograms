@@ -1,3 +1,6 @@
+//TITULO DO PROJETO: ArvoreBusca.c
+//VERSÃO ou DATA:1.3 14/05/2019
+//AUTORES:LAURENTINO, J.I.C.
 
 #include <stdlib.h>
 #include <stdio.h>

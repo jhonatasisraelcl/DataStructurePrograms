@@ -1,1 +1,3 @@
 https://www.ime.usp.br/~pf/algoritmos/aulas/binst.html
+
+https://www.ime.usp.br/~pf/algoritmos/aulas/bint.html

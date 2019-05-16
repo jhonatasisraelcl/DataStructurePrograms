@@ -1,3 +1,5 @@
 https://www.ime.usp.br/~pf/algoritmos/aulas/binst.html
 
 https://www.ime.usp.br/~pf/algoritmos/aulas/bint.html
+
+https://www.ime.usp.br/~pf/estruturas-de-dados/aulas/index.html ----->>> esse site tem aulas MUITO BEM ESCRITAS E DESENVOLVIDAS COM ASSUNTOS RELACIONADOS A ARVORES BINARIAS

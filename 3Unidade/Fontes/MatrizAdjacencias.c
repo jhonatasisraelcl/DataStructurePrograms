@@ -1,3 +1,7 @@
+//TITULO DO PROJETO: MatrizAdjacencias.c
+//VERSÃO ou DATA:1.0 25/06/2019
+//AUTORES:LAURENTINO, J.I.C.
+
 #include <stdlib.h>
 #include <stdio.h>
 #include <string.h>

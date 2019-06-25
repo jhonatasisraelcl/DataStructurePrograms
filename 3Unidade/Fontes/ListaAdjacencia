@@ -1,0 +1,138 @@
+#include <stdlib.h>
+#include <stdio.h>
+#include <string.h>
+
+typedef struct bloco{
+    int valor;
+    struct bloco *proximo;
+}Bloco;
+
+typedef struct table{
+    struct bloco **b;
+}Table;
+
+int quantidade_arestas();
+void adicionar(Table *table, int ,int *vetor);
+Bloco* novo(int c);
+void exibiTabela(Table *t, int tam, int *vetor);
+void exibiLista(Bloco *x);
+void preencher_vetor(int *vetor, int arestas);
+int verifica_posicao_chave(int *vetor, int valor, int arestas);
+int busca_ligacao(Table *table, int valor, int posicao_chave);
+
+int main (void){
+    Table table;
+    int arestas = quantidade_arestas();
+    table.b = malloc(sizeof(Bloco*)*(arestas));
+    int vetor_posicoes[arestas];    
+	  for(int i = 0; i < arestas; i++){table.b[i] = NULL;}
+
+    preencher_vetor(vetor_posicoes, arestas);
+    adicionar(&table, arestas, vetor_posicoes);
+    exibiTabela(&table, arestas, vetor_posicoes);
+    return 0;
+}
+
+int quantidade_arestas(){    
+    FILE *arq;
+    arq = fopen("grafo.txt", "r");
+    char linha[100], *resultado;
+    int contador = 0;
+
+    while(!feof(arq)){
+        resultado = fgets(linha, 100, arq);
+        if(strcmp (linha, "#\n") == 0) break;
+        else contador++;
+    }
+    fclose(arq);
+    return contador;
+}
+
+void preencher_vetor(int *vetor, int arestas){
+    FILE *arq;
+    arq = fopen("grafo.txt", "r");
+    char linha[100], *resultado;
+    int contador = 0;
+
+    while(contador < arestas){
+        resultado = fgets(linha, 100, arq);
+        vetor[contador] = atoi(linha);
+        contador++;
+    }
+    fclose(arq);
+}
+
+void adicionar (Table *table, int arestas , int *vetor){    
+    FILE *arq;
+    arq = fopen("grafo.txt", "r");
+    char linha[100], *resultado, *split;
+    int  contador = 0, contador_linha = 0, chave, valor, posicao_chave;
+    while(!feof(arq)){
+        resultado = fgets(linha, 100, arq);
+        if(contador > arestas){
+            contador_linha = 0;
+            split = strtok(linha, " ");
+            while (split != NULL){
+                if(contador_linha == 0){chave = atoi(split);}
+                else{valor = atoi(split);}
+                contador_linha++;
+                split = strtok (NULL, " ");
+            }
+
+            posicao_chave = verifica_posicao_chave(vetor, chave , arestas);
+            if(busca_ligacao(table, valor, posicao_chave ) == 0){
+                Bloco *bloco = novo(valor);                
+                if(table->b[posicao_chave] == NULL){table->b[posicao_chave] = bloco;}
+                else{
+                    bloco->proximo = table->b[posicao_chave];
+                    table->b[posicao_chave] = bloco;
+                }
+            }
+        }
+
+        contador++;
+    }
+
+    fclose(arq);
+}
+Bloco* novo(int c){
+    Bloco* bloco;
+    bloco = (Bloco*)malloc(sizeof(Bloco));
+    bloco->valor = c;
+    bloco->proximo = NULL;
+    return bloco;
+}
+
+void exibiTabela(Table *t, int tam, int *vetor){
+    int i;
+    for (i = 0; i < tam; i++){
+        printf("[%d]", vetor[i]);
+        printf(" --> ");
+        exibiLista(t->b[i]);
+        printf("\n");
+    }
+}
+
+void exibiLista(Bloco *x){
+    while (x != NULL){
+        printf("%d", x->valor);
+        printf(" ");
+        x = x->proximo;
+    }
+}
+
+int verifica_posicao_chave(int *vetor, int valor, int arestas) {
+    int i;
+    for(i = 0; i < arestas; i++){
+        if(vetor[i] == valor){return i;}
+    }
+}
+
+int busca_ligacao(Table *table, int valor, int posicao_chave){
+    Bloco *bloco = table->b[posicao_chave];
+    while(bloco != NULL){        
+        if(bloco->valor == valor) return 1;
+        bloco = bloco->proximo;
+    }
+    return 0;
+}
